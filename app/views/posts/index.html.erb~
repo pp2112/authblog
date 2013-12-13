@@ -1,0 +1,102 @@
+<!-- CSS Stylesheet -->
+<link rel="stylesheet" type="text/css" media="all" href="../assets/league.css.erb" />
+
+<% @posts.each do |post| %>
+
+<!-- BREADCRUMB -->
+<div id="breadcrumbs">
+</div>
+<div class="section-wrapper section-wrapper-primary">
+   <div class="section-wrapper-top"></div>
+   <div class="section-wrapper-content">
+      <div class="section-wrapper-content-wrapper">
+         <!-- Silenced -->
+         <div class="clearfix">
+            <div class="clearfix">
+               <div class="float-left">
+                  <h3> <%= link_to post.title, post %></h3>
+               </div>
+               <div class="float-right">
+               </div>
+            </div >
+            <div class="clearfix showthread-top-buttons">
+               <div class="float-left ">
+               </div>
+               <div class="float-right
+                  ">
+                  <!-- TOP PAGINATION -->
+               </div>
+            </div>
+         </div>
+         <!-- Posts --> 
+         <div id="edit14220820" class="margin-top-15">
+            <div class="content-border sca_not_agree" id="post14220820">
+               <div class="white-stone post-row">
+                  <div class="gs-container gs-no-gutter">
+                     <div class="default-1-5">
+                        <div class="post-col-left">
+                           <!-- something on the left -->
+                        </div>
+                     </div>
+                     <div class="default-4-5">
+                        <div class="post-col-right">
+                           <div class="post-header padding-side-10 clearfix">
+                              <!-- Post Date -->
+                              <p class="post-user"><%= simple_format h post.name %></p>
+                              <span>
+                                 <p><%= time_ago_in_words post.created_at %> ago</p>
+                              </span>
+                              <!-- Riot Post -->
+                           </div>
+                           <hr class="subtle-divider">
+                           <div class="post-message">
+                             <%=simple_format((truncate post.content), class:'featured1') %>
+                           </div>
+                           
+                           
+                                 <div>
+                                    <% if user_signed_in? && current_user.email == post.name %> 
+  				      <hr class="subtle-divider">
+                                       <%= link_to 'Edit Post', edit_post_path(post) %> |
+                                       <%= link_to 'Back to Posts', posts_path %> |
+                                       <%= link_to "Delete Post", post, :method => :delete, :confirm => "Are you sure?" %>
+                                       <% end %>
+                                 </div>
+                           
+                           <!-- Post Footer -->
+                           <div class="post-footer padding-side-10 clearfix">
+                              <!-- Post Ranking -->
+                              <div class="post-footer-buttons">
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--div id="lastpost" class="post_separator"></div-->
+         <div class="margin-top-15 clearfix">
+            <div class="float-left">
+            </div>
+            <div class="float-right"></div>
+            <!-- BOTTOM PAGINATION -->
+         </div>
+         <!-- QUICK REPLY JS -->
+         <!-- QUICK REPLY -->
+         <!-- NEXT / PREVIOUS LINKS -->
+         <!-- / next / previous links -->
+      </div>
+   </div>
+   <div class="section-wrapper-bottom"></div>
+</div>
+<% end %>
+
+ <br><br><br><br><br><br><br><br><br>
+
+<a href=<%= new_post_path %> class="button"/>New Post</a>
+ 
+
+<br><br><br><br><br><br>
+
+

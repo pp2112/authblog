@@ -1,0 +1,22 @@
+
+<div class="post-message">
+ <p>
+  <%= comment.body %>
+</p>
+
+<p>
+  <%= comment.commenter %>
+</p>
+ 
+</div>
+<hr class="subtle-divider">
+
+ 
+<% if false %>
+<p>
+  <%= link_to 'Destroy Comment', [comment.post, comment],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+</p>
+
+<% end %>
