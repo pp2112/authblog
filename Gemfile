@@ -11,12 +11,15 @@ gem 'thin'
 gem 'pg'
 end
 
+group :production, :staging do
+ gem 'rails_12factor'
+end
+
 gem 'feedzirra'
 gem 'devise'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'progress_bar'
-gem 'rails_12factor'
 
 # Gems used only for assets and not required
 # in production environments by default.
