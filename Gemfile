@@ -5,8 +5,10 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development do
- gem 'sqlite3', '1.3.5'
+gem 'sqlite3', :group => [:development, :test]
+group :production do
+gem 'thin'
+gem 'pg'
 end
 
 gem 'feedzirra'
@@ -14,6 +16,7 @@ gem 'devise'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'progress_bar'
+gem 'rails_12factor'
 
 # Gems used only for assets and not required
 # in production environments by default.
